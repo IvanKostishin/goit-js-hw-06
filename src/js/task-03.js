@@ -19,3 +19,4 @@ const markup = images
   .map((image) => `<li ><img src = ${image.url} alt = ${image.alt} class="list--img" ></img></li>`)
   .join("");
 list.insertAdjacentHTML("beforeend", markup);
+ 
