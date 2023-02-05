@@ -6,10 +6,14 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const list = document.querySelector('ul#ingredients')
+let fragment = new DocumentFragment();
 
-ingredients.forEach(ingredient => {
-  const listItem =
-  document.createElement("li");
-listItem.textContent = ingredient;
-document.querySelector('#ingredients').append(listItem);
-});
+ingredients.map((ingredient) => {
+  const itemList = document.createElement("li");
+  itemList.classList.add('item');
+  itemList.textContent += ingredient;
+  fragment.appendChild(itemList)
+})
+document.querySelector('ul#ingredients').append(fragment);
+
